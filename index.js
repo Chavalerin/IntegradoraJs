@@ -68,3 +68,78 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
+const productos = [
+    { id: 1, nombre: "Producto 1", precio: 19.99 },
+    { id: 2, nombre: "Producto 2", precio: 29.99 },
+    { id: 3, nombre: "Producto 3", precio: 39.99 },
+    // Agrega más productos según sea necesario
+];
+
+// Array para almacenar productos favoritos
+const favoritos = [];
+
+// Función para renderizar los productos en el contenedor
+function renderizarProductos() {
+    const productosContainer = document.getElementById("productos-container");
+
+    productos.forEach((producto) => {
+        const productoDiv = document.createElement("div");
+        productoDiv.classList.add("producto");
+
+        productoDiv.innerHTML = `
+            <p>${producto.nombre}</p>
+            <p>Precio: $${producto.precio.toFixed(2)}</p>
+            <button class="agregar-favorito" data-id="${producto.id}">Agregar a Favoritos</button>
+        `;
+
+        productosContainer.appendChild(productoDiv);
+    });
+}
+
+// Función para agregar un producto a la lista de favoritos
+function agregarFavorito(id) {
+    const producto = productos.find((p) => p.id === id);
+    if (producto && !favoritos.includes(producto)) {
+        favoritos.push(producto);
+        actualizarFavoritos();
+    }
+}
+
+// Función para quitar un producto de la lista de favoritos
+function quitarFavorito(id) {
+    const index = favoritos.findIndex((p) => p.id === id);
+    if (index !== -1) {
+        favoritos.splice(index, 1);
+        actualizarFavoritos();
+    }
+}
+
+// Función para actualizar la lista de favoritos en la interfaz de usuario
+function actualizarFavoritos() {
+    const favoritosLista = document.getElementById("favoritos-lista");
+    favoritosLista.innerHTML = "";
+
+    favoritos.forEach((producto) => {
+        const li = document.createElement("li");
+        li.textContent = `${producto.nombre} - $${producto.precio.toFixed(2)}`;
+
+        // Agregar un botón para quitar de favoritos
+        const botonQuitar = document.createElement("button");
+        botonQuitar.textContent = "Quitar de Favoritos";
+        botonQuitar.addEventListener("click", () => quitarFavorito(producto.id));
+
+        li.appendChild(botonQuitar);
+        favoritosLista.appendChild(li);
+    });
+}
+
+// Escuchar clics en los botones "Agregar a Favoritos"
+document.addEventListener("click", (event) => {
+    if (event.target.classList.contains("agregar-favorito")) {
+        const productId = parseInt(event.target.getAttribute("data-id"));
+        agregarFavorito(productId);
+    }
+});
+
+// Llama a la función para renderizar los productos cuando la página se carga
+window.addEventListener("load", renderizarProductos);

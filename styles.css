@@ -494,3 +494,27 @@ footer {
 }
 
 /* Estilos adicionales según tus preferencias */
+
+.producto {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin: 10px;
+    background-color: #f9f9f9;
+}
+
+/* Estilos para la lista de favoritos */
+#favoritos-container {
+    float: right;
+    margin-right: 20px;
+}
+
+#favoritos-lista {
+    list-style: none;
+    padding: 0;
+}
+
+#favoritos-lista li {
+    margin: 5px 0;
+}
+
+/* Estilos adicionales según tus preferencias */
