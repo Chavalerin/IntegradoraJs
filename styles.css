@@ -1,0 +1,496 @@
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif&family=Roboto+Slab:wght@600&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;1,400&family=Sigmar&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+/*header*/
+
+.header {
+    height: 80px;
+    width: 100%;
+    padding: 0px 50px;
+    box-shadow: rgb(203, 234, 50) 0px 08px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    top: 0;
+    z-index: 1;
+    background-color: white;
+}
+
+.navbar ul {
+    display: flex;
+    list-style: none;
+    gap: 100px;
+    
+}
+
+.header img {
+    height: 40%;
+    width: 40%;
+    border-radius: 50px;
+    background-color: rgb(22, 230, 91);
+}
+
+
+.navbar-link {
+    text-decoration: none;
+    color: rgb(240, 9, 9);
+    font-weight: 500;
+    
+    
+}
+
+/*CARRITO*/
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 1em 0;
+}
+
+main {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.productos, .carrito {
+    flex: 1;
+    padding: 20px;
+    border: 1px solid #ccc;
+    margin: 10px;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    margin: 5px 0;
+    cursor: pointer;
+}
+
+button {
+    background-color: #333;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #555;
+}
+
+/*CARRITO*/
+
+.cart-label {
+    cursor: pointer;
+}
+
+.cart-bubble {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  text-align: center;
+  background: var(--secondary);
+  color: var(--background);
+  font-size: 12px;
+  font-weight: 500;
+  height: 20px;
+  width: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-left: 1px;
+  border: 1px solid #e17e15;
+  border-radius: 50%; 
+}
+
+/*CARRITO*/
+
+
+  .overlay {
+    position: absolute;
+    top: 65px;
+    left: 0;
+    height: 100vh;
+    width: 100%;
+    z-index: 1;
+    background: rgba(136, 7, 7, 0.05);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    display: none;
+}
+
+.show-overlay {
+  display: flex; /*block*/
+}
+
+  
+  .empty-msg {
+    color: var(--nav);
+    font-size: 15px;
+    text-align: center;
+  }
+
+
+/*menu hamburguesa*/
+
+.navbar {
+    display: flex;
+}
+
+.navbar i {
+    font-size: 36px;
+    display: none;
+}
+
+#toggle-menu{
+    display: none;
+}
+
+
+        
+
+/*Main*/
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.jubilados_imagen {
+    height: 80%;
+    width: 80%;
+}
+
+.atendiendolos_imagen {
+    height: 90%;
+    width: 90%;
+}
+
+/*HERO*/
+
+#hero {
+    margin-top: 80px;
+    display: flex;
+    padding: 70px 0px;
+    width: 90%;
+    justify-content: space-around;
+    border-radius: 50%;
+
+}
+
+.hero-presentation {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 40px;
+    
+
+
+}
+
+.hero-img {
+    height: 50%;
+    width: 50%;
+    border-radius: 50%;
+}
+
+.hero-presentation h1 {
+    font-weight: 700;
+    font-size: 40px;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.hero-presentation p {
+    font-weight: 500;
+    font-size: 18px;
+    max-width: 350px;
+    color: rgb(5, 5, 4);
+}
+
+.button-container {
+    display: flex;
+    gap: 15px;
+
+}
+
+.button-container a {
+    text-decoration: none;
+    border: 3px solid black;
+    border-radius: 20px;
+    padding: 8px 15px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.primary-btn {
+    background-color: black;
+    color: white;
+}
+
+.alt-btn {
+    background-color: white;
+    color: black;
+}
+
+/*ABOUT*/
+
+#about {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 80%;
+    max-width: 850px;
+    padding: 30px 0px;
+    font-weight: 300;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #df0909;
+}
+
+/* Agrega estilos CSS según tus preferencias */
+body {
+    font-family: Arial, sans-serif;
+    background-color: rgb(90, 57, 222);
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    
+}
+
+h1 {
+    color: rgb(230, 11, 234);
+    
+}
+
+form {
+    max-width: 1800px;
+    margin: 0 auto;
+    background-color:purple;
+    padding: 50px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(5, 223, 234, 0.477);
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    text-align: left;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+button {
+    background-color: #007BFF;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+
+/*CARDS*/
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Estilos de la cuadrícula */
+.cuadricula {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Tres columnas por fila */
+    grid-gap: 20px; /* Espacio entre las imágenes */
+    padding: 20px;
+}
+
+.imagen {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.imagen img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Estilos para el botón "Ver más" */
+#ver-mas {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+@media (max-whidt: 992px) {
+    .hero-presentation {
+        text-align: center;
+        width: 90%;
+        align-items: center;
+    }
+   .hero-presentation h1 {
+    display: block;
+    width: 100%;
+
+   }
+
+   .hero-presentation p{
+    max-width: 80%;
+    font-size: 16px;
+   }
+
+   .button-container{
+    justify-content: center;
+   }
+
+   .hero-img {
+    display: none;
+   }
+
+   #about {
+    font-size: 15px;
+   }
+
+}
+
+@media (max-widht: 576px) {
+    .navbar ul {
+        background-color: white;
+        width: 100%;
+        height: calc(100vh - 80px);
+        position: absolute;
+        top: 80px;
+        left: 0;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .navbar i {
+        display: block;
+    }
+}
+
+/*Contact*/
+
+#contact{
+    display: flex;
+    padding: 70px 20px;
+    width: 110%;
+    justify-content: space-around;
+    color: white;
+    flex-wrap: wrap;
+    gap: 700px;
+}
+
+.info-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 30px;
+}
+
+.contact-info-container{
+    display: flex;
+    gap: 100px;
+    flex-wrap: wrap;
+}
+
+.info-column h3 {
+    font-size: 24px;
+}
+
+.info-column p, .info-column a{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.info-column a{
+    text-decoration: none;
+    color: white;
+}
+
+.black-bg{
+    background-color: black;
+}
+
+/*footer*/
+
+footer {
+    background-color: black;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+/* Estilos para los productos */
+.producto {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin: 10px;
+    background-color: #f9f9f9;
+}
+
+/* Estilos para el carrito de compras */
+#carrito-container {
+    float: right;
+    margin-right: 20px;
+}
+
+#carrito-lista {
+    list-style: none;
+    padding: 0;
+}
+
+#carrito-lista li {
+    margin: 5px 0;
+}
+
+/* Estilos adicionales según tus preferencias */
