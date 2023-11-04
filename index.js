@@ -1,3 +1,173 @@
+/*seccion contacto*/
+
+document.addEventListener("DOMContentLoaded", function() {
+    const contactForm = document.getElementById("contact-form");
+    const messageBox = document.getElementById("message-box");
+
+    contactForm.addEventListener("submit", function(event) {
+        event.preventDefault();
+        const name = document.getElementById("name").value;
+        const email = document.getElementById("email").value;
+        const message = document.getElementById("message").value;
+
+        // Validación simple del correo electrónico
+        const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+
+        if (!name || !email || !message) {
+            messageBox.textContent = "Por favor, complete todos los campos.";
+        } else if (!email.match(emailPattern)) {
+            messageBox.textContent = "Por favor, ingrese un correo electrónico válido.";
+        } else {
+            // Aquí puedes enviar los datos del formulario a un servidor o realizar otra acción
+            messageBox.textContent = "Mensaje enviado con éxito. Gracias, " + name + "!";
+            contactForm.reset();
+        }
+    });
+});
+
+/*Carrito*/
+
+
+const btnCart = document.querySelector('.container-cart-icon');
+const containerCartProducts = document.querySelector(
+	'.container-cart-products'
+);
+
+btnCart.addEventListener('click', () => {
+	containerCartProducts.classList.toggle('hidden-cart');
+});
+
+/* ========================= */
+const cartInfo = document.querySelector('.cart-product');
+const rowProduct = document.querySelector('.row-product');
+
+// Lista de todos los contenedores de productos
+const productsList = document.querySelector('.container-items');
+
+// Variable de arreglos de Productos
+let allProducts = [];
+
+const valorTotal = document.querySelector('.total-pagar');
+
+const countProducts = document.querySelector('#contador-productos');
+
+const cartEmpty = document.querySelector('.cart-empty');
+const cartTotal = document.querySelector('.cart-total');
+
+productsList.addEventListener('click', e => {
+	if (e.target.classList.contains('btn-add-cart')) {
+		const product = e.target.parentElement;
+
+		const infoProduct = {
+			quantity: 1,
+			title: product.querySelector('h2').textContent,
+			price: product.querySelector('p').textContent,
+		};
+
+		const exits = allProducts.some(
+			product => product.title === infoProduct.title
+		);
+
+		if (exits) {
+			const products = allProducts.map(product => {
+				if (product.title === infoProduct.title) {
+					product.quantity++;
+					return product;
+				} else {
+					return product;
+				}
+			});
+			allProducts = [...products];
+		} else {
+			allProducts = [...allProducts, infoProduct];
+		}
+
+		showHTML();
+	}
+});
+
+rowProduct.addEventListener('click', e => {
+	if (e.target.classList.contains('icon-close')) {
+		const product = e.target.parentElement;
+		const title = product.querySelector('p').textContent;
+
+		allProducts = allProducts.filter(
+			product => product.title !== title
+		);
+
+		console.log(allProducts);
+
+		showHTML();
+	}
+});
+
+// Funcion para mostrar  HTML
+const showHTML = () => {
+	if (!allProducts.length) {
+		cartEmpty.classList.remove('hidden');
+		rowProduct.classList.add('hidden');
+		cartTotal.classList.add('hidden');
+	} else {
+		cartEmpty.classList.add('hidden');
+		rowProduct.classList.remove('hidden');
+		cartTotal.classList.remove('hidden');
+	}
+
+	// Limpiar HTML
+	rowProduct.innerHTML = '';
+
+	let total = 0;
+	let totalOfProducts = 0;
+
+	allProducts.forEach(product => {
+		const containerProduct = document.createElement('div');
+		containerProduct.classList.add('cart-product');
+
+		containerProduct.innerHTML = `
+            <div class="info-cart-product">
+                <span class="cantidad-producto-carrito">${product.quantity}</span>
+                <p class="titulo-producto-carrito">${product.title}</p>
+                <span class="precio-producto-carrito">${product.price}</span>
+            </div>
+            <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                class="icon-close"
+            >
+                <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M6 18L18 6M6 6l12 12"
+                />
+            </svg>
+        `;
+
+		rowProduct.append(containerProduct);
+
+		total =
+			total + parseInt(product.quantity * product.price.slice(1));
+		totalOfProducts = totalOfProducts + product.quantity;
+	});
+
+	valorTotal.innerText = `$${total}`;
+	countProducts.innerText = totalOfProducts;
+};
+
+/*localStorage*/
+
+// Guardar datos en localStorage
+localStorage.setItem('preferencias', JSON.stringify(preferenciasUsuario));
+
+// Recuperar datos de localStorage
+const preferenciasGuardadas = JSON.parse(localStorage.getItem('preferencias'));
+
+// Eliminar datos de localStorage
+localStorage.removeItem('preferencias');
+
+
 document.getElementById("contactForm").addEventListener("submit", function (event) {
     event.preventDefault();
 
@@ -25,121 +195,3 @@ document.getElementById("contactForm").addEventListener("submit", function (even
     alert("¡Formulario enviado con éxito!");
     this.reset(); // Limpia los campos del formulario
 });
-
-document.addEventListener("DOMContentLoaded", () => {
-    const cuadricula = document.getElementById("cuadricula");
-    const verMasButton = document.getElementById("ver-mas");
-
-    // Lista de imágenes (puedes agregar más imágenes según tus necesidades)
-    const imagenes = [
-        "./img/ANGRA DOS REIS.jpg",
-        "./img/COSTA DO SAUIPE.jpg",
-        "/img/Natal.jpg",
-        "/img/PORTO DE GALINHAS.jpg",
-        "/img/PORTO SEGURO.jpg",
-        "/img/PRAIA DO FORTE.jpg",
-    ];
-
-    // Función para agregar imágenes a la cuadrícula
-    function agregarImagenesALaCuadricula() {
-        imagenes.forEach((imagenSrc) => {
-            const imagenDiv = document.createElement("div");
-            imagenDiv.classList.add("imagen");
-
-            const imagen = document.createElement("img");
-            imagen.src = imagenSrc;
-            imagen.alt = "Imagen";
-            
-            imagenDiv.appendChild(imagen);
-            cuadricula.appendChild(imagenDiv);
-        });
-    }
-
-    // Agregar imágenes al cargar la página
-    agregarImagenesALaCuadricula();
-
-    // Manejar el botón "Ver más"
-    verMasButton.addEventListener("click", () => {
-        // Agregar más imágenes a la cuadrícula
-        agregarImagenesALaCuadricula();
-    });
-});
-
-
-
-
-const productos = [
-    { id: 1, nombre: "Producto 1", precio: 19.99 },
-    { id: 2, nombre: "Producto 2", precio: 29.99 },
-    { id: 3, nombre: "Producto 3", precio: 39.99 },
-    // Agrega más productos según sea necesario
-];
-
-// Array para almacenar productos favoritos
-const favoritos = [];
-
-// Función para renderizar los productos en el contenedor
-function renderizarProductos() {
-    const productosContainer = document.getElementById("productos-container");
-
-    productos.forEach((producto) => {
-        const productoDiv = document.createElement("div");
-        productoDiv.classList.add("producto");
-
-        productoDiv.innerHTML = `
-            <p>${producto.nombre}</p>
-            <p>Precio: $${producto.precio.toFixed(2)}</p>
-            <button class="agregar-favorito" data-id="${producto.id}">Agregar a Favoritos</button>
-        `;
-
-        productosContainer.appendChild(productoDiv);
-    });
-}
-
-// Función para agregar un producto a la lista de favoritos
-function agregarFavorito(id) {
-    const producto = productos.find((p) => p.id === id);
-    if (producto && !favoritos.includes(producto)) {
-        favoritos.push(producto);
-        actualizarFavoritos();
-    }
-}
-
-// Función para quitar un producto de la lista de favoritos
-function quitarFavorito(id) {
-    const index = favoritos.findIndex((p) => p.id === id);
-    if (index !== -1) {
-        favoritos.splice(index, 1);
-        actualizarFavoritos();
-    }
-}
-
-// Función para actualizar la lista de favoritos en la interfaz de usuario
-function actualizarFavoritos() {
-    const favoritosLista = document.getElementById("favoritos-lista");
-    favoritosLista.innerHTML = "";
-
-    favoritos.forEach((producto) => {
-        const li = document.createElement("li");
-        li.textContent = `${producto.nombre} - $${producto.precio.toFixed(2)}`;
-
-        // Agregar un botón para quitar de favoritos
-        const botonQuitar = document.createElement("button");
-        botonQuitar.textContent = "Quitar de Favoritos";
-        botonQuitar.addEventListener("click", () => quitarFavorito(producto.id));
-
-        li.appendChild(botonQuitar);
-        favoritosLista.appendChild(li);
-    });
-}
-
-// Escuchar clics en los botones "Agregar a Favoritos"
-document.addEventListener("click", (event) => {
-    if (event.target.classList.contains("agregar-favorito")) {
-        const productId = parseInt(event.target.getAttribute("data-id"));
-        agregarFavorito(productId);
-    }
-});
-
-// Llama a la función para renderizar los productos cuando la página se carga
-window.addEventListener("load", renderizarProductos);

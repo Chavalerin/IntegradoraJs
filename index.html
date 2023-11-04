@@ -3,149 +3,222 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Las 4 M Turismo</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" 
-    integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" 
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="shortcut icon" href="img/favicon-32x32.png" type="image/x-icon">
+    <title>Turismo las 4M</title>
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="login.html">
+<link rel="stylesheet" href="register.html">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" 
+integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" 
+crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link rel="shortcut icon" href="img/favicon-32x32.png" type="image/x-icon">
+
+
 </head>
 <body>
+
     <header class="header">
-        <a href="./index.html"><img src="img/logo.png" alt="logotipo" class="loguisimo_logo"></a>
+        <a href="#hero"><img src="img/logo.png" alt="logo turismo"></a>
         <nav class="navbar">
             <label for="toggle-menu"><i class="fas fa-bars"></i></label>
             <input type="checkbox" id="toggle-menu">
-            
-            
-            <ul>
+            <ul class="navbar-list">
                 <li><a class="navbar-link" href="#hero">Inicio</a></li>
-                <li><a class="navbar-link" href="#cuadricula">Paquetes</a></li>
-                <li><a class="navbar-link" href="#about">Beneficios</a></li>
-                <li><a class="navbar-link" href="#contacto">Contacto</a></li>
-                <li><a href="./register.html">Registro</a></li>
-                <li><a href="./login.html">Iniciar sesión</a></li>
+                <li><a class="navbar-link" href="#about">Sobre Nosotros</a></li>
+                <li><a class="navbar-link" href="#Ofertas">Beneficios</a></li>
+                <li><a class="navbar-link" href="#Contacto">Contacto</a></li>
             </ul>
-           
-        </nav>
+            
+            <div class="container-icon">
+				<div class="container-cart-icon">
+					<svg
+						xmlns="http://www.w3.org/2000/svg"
+						fill="none"
+						viewBox="0 0 24 24"
+						stroke-width="1.5"
+						stroke="currentColor"
+						class="icon-cart"
+					>
+						<path
+							stroke-linecap="round"
+							stroke-linejoin="round"
+							d="M15.75 10.5V6a3.75 3.75 0 10-7.5 0v4.5m11.356-1.993l1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 01-1.12-1.243l1.264-12A1.125 1.125 0 015.513 7.5h12.974c.576 0 1.059.435 1.119 1.007zM8.625 10.5a.375.375 0 11-.75 0 .375.375 0 01.75 0zm7.5 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z"
+						/>
+					</svg>
+					<div class="count-products">
+						<span id="contador-productos">0</span>
+					</div>
+				</div>
+                <div class="overlay"></div>
+            
     </header>
-
+    
     <main>
-        <section id="hero" >
+        <section id="hero">
             <div class="hero-presentation">
-                <h1>Bienvenidos, <span>Somos tu mejor opcion digital!</span></h1>
+                <h1>Hola! Viajero, <span>¡Explora el Mundo a Través de Nuestros Destinos Inolvidables!</span></h1>
                 <p>
-                    ¡Bienvenidos a nuestro mundo digital! Aquí en Las 4 M Turismo, 
-                    estamos comprometidos en brindarte una experiencia única y emocionante. 
-                    Nuestra misión es inspirarte, informarte y conectarte con todo lo que necesitas. 
-                    Explora nuestro sitio y descubre un universo de posibilidades.
-                     ¡Únete a nosotros en este viaje digital y déjanos llevarte a lugares que nunca imaginaste!
+                    "Descubre el Mundo, Viaja con Nosotros, somos especialistas en lo que sabemos"
                 </p>
                 <div class="button-container">
-                    <a href="#" class="primary-btn">Paquetes</a>
-                    <a href="#" class="alt-btn">Ofertas</a>
+                    <a href="./login.html" class="primary-btn">Ingresar</a>
+                    <a href="./register.html" class="alt-btn">Registrate</a>
                 </div>
+            
             </div>
-            <img src="img/turismo.jpg" alt="imagen de varios lugares" class="hero-img">
+            <img src="img/turismo.jpg" alt="imagen de fondo paisaje" class="hero-img">
+            
         </section>
         <section id="about">
             <p>
-                <b>En nuestra página web de turismo, te invitamos a embarcarte en un emocionante viaje hacia lo desconocido.
-                 Sumérgete en la riqueza de culturas, paisajes impresionantes y experiencias inolvidables que el mundo tiene para ofrecer. 
-                 Desde destinos exóticos hasta joyas escondidas, estamos aquí para guiarte en la planificación de tus aventuras.
-                 Prepárate para explorar, descubrir y crear recuerdos que perdurarán toda la vida. 
-                 Entra en el mundo del viaje con nosotros y abre la puerta a un universo de posibilidades.
-                 ¡Tu próxima gran aventura comienza aquí!</b>
+                En nuestra página web de turismo, te invitamos a embarcarte en un emocionante viaje hacia lo desconocido. 
+                Sumérgete en la riqueza de culturas, paisajes impresionantes y experiencias inolvidables que el mundo tiene para ofrecer. Desde destinos exóticos hasta joyas escondidas, estamos aquí para guiarte en la planificación de tus aventuras. Prepárate para explorar, descubrir y crear recuerdos que perdurarán toda la vida. Entra en el mundo del viaje con nosotros y abre la puerta a un universo de posibilidades. 
+                ¡Tu próxima gran aventura comienza aquí!
             </p>
         </section>
-    
-    <section class="beneficios">
-        <h2>Beneficios de Elegirnos</h2>
-        <div class="beneficio">
-            <img src="img/previajes-para-jubilados.jpg" alt="jubilados sonriendo" class="jubilados_imagen">
-            <h3>Experiencia y Conocimiento</h3>
-            <p>Encontrar la jubilación que soñaste merece una celebración a lo grande. Nuestros paquetes de viaje exclusivos para jubilados te ofrecen descuentos especiales, comodidad y experiencias enriquecedoras. Descubre cómo hacer que tus años dorados sean aún más inolvidables con nosotros.-</p>
-        </div>
-        
-        <div class="beneficio">
-            <img src="img/atencion personalizada.jpg" alt="Atención Personalizada" class="atendiendolos_imagen">
-            <h3>Atención Personalizada</h3>
-            <p>Nos enorgullecemos de ofrecer un servicio altamente personalizado, adaptado a tus gustos y necesidades individuales.</p>
-        </div>
         
         </section>
 
-        <div id="productos-container">
-            <!-- Los productos se agregarán aquí dinámicamente con JavaScript -->
-        </div>
-    
-        <div id="favoritos-container">
-            <h2>Carrito de Favoritos</h2>
-            <ul id="favoritos-lista">
-                <!-- Los productos favoritos se mostrarán aquí dinámicamente con JavaScript -->
-            </ul>
-        </div>
-    <section class="cuadricula" id="cuadricula">
-        <!-- Las imágenes se agregarán aquí dinámicamente -->
-    </section>
-    <button id="ver-mas">Ver más</button>
-    <a href="#hero">Volver Arriba</a>
-     
+        <section id="Ofertas">
+		
 
-            <!-- Los productos se cargarán aquí dinámicamente con JavaScript -->
-        
+				<div class="container-cart-products hidden-cart">
+					<div class="row-product hidden">
+						<div class="cart-product">
+							<div class="info-cart-product">
+								<span class="cantidad-producto-carrito">1</span>
+								<p class="titulo-producto-carrito">Zapatos Nike</p>
+								<span class="precio-producto-carrito">$80</span>
+							</div>
+							<svg
+								xmlns="http://www.w3.org/2000/svg"
+								fill="none"
+								viewBox="0 0 24 24"
+								stroke-width="1.5"
+								stroke="currentColor"
+								class="icon-close"
+							>
+								<path
+									stroke-linecap="round"
+									stroke-linejoin="round"
+									d="M6 18L18 6M6 6l12 12"
+								/>
+							</svg>
+						</div>
+					</div>
+
+					<div class="cart-total hidden">
+						<h3>Total:</h3>
+						<span class="total-pagar">$200</span>
+					</div>
+					<p class="cart-empty">El carrito está vacío</p>
+				</div>
+			</div>
+		</header>
+		<div class="container-items">
+			<div class="item">
+				<figure>
+					<img
+						src="img/ANGRA DOS REIS.jpg"
+						alt="producto"
+					/>
+				</figure>
+				<div class="info-product">
+					<h2>Angra Dos Reis</h2>
+					<p class="price">$1.039</p>
+					<button class="btn-add-cart">Añadir al carrito</button>
+				</div>
+			</div>
+			<div class="item">
+				<figure>
+					<img
+						src="img/COSTA DO SAUIPE.jpg"
+						alt="producto"
+					/>
+				</figure>
+				<div class="info-product">
+					<h2>Costa Do Sauipe</h2>
+					<p class="price">$959</p>
+					<button class="btn-add-cart">Añadir al carrito</button>
+				</div>
+			</div>
+			<div class="item">
+				<figure>
+					<img
+						src="img/Natal.jpg"
+						alt="producto"
+					/>
+				</figure>
+				<div class="info-product">
+					<h2>Natal</h2>
+					<p class="price">$494</p>
+					<button class="btn-add-cart">Añadir al carrito</button>
+				</div>
+			</div>
+			<div class="item">
+				<figure>
+					<img
+						src="img/PORTO SEGURO.jpg"
+						alt="producto"
+					/>
+				</figure>
+				<div class="info-product">
+					<h2>Porto Seguro</h2>
+					<p class="price">$986</p>
+					<button class="btn-add-cart">Añadir al carrito</button>
+				</div>
+			</div>
+			<div class="item">
+				<figure>
+					<img
+						src="img/PRAIA DO FORTE.jpg"
+						alt="producto"
+					/>
+				</figure>
+				<div class="info-product">
+					<h2>Praia Do Forte</h2>
+					<p class="price">$1263</p>
+					<button class="btn-add-cart">Añadir al carrito</button>
+				</div>
+			</div>
+		</div>
+
+            
+           
+            
+        </nav>
+        <section id="Contacto">
+            <div class="contact-form">
+                <h2>Contacto</h2>
+                <form id="contact-form">
+                    <input type="text" id="name" placeholder="Nombre" required>
+                    <input type="email" id="email" placeholder="Correo electrónico" required>
+                    <textarea id="message" placeholder="Mensaje" required></textarea>
+                    <button type="submit">Enviar</button>
+                </form>
+            </div>
+            <div id="message-box"></div>
+        <section id="contact" class="black-bg">
+            <div class="info-container">
+                <h2>Contactame</h2>
+                <div class="info-column">
+                    <h3>En la nube</h3>
+                <p> <i class="fas fa-location-dot"></i>Servidor 123</p>
+                <p> <i class="fas fa-envelope"></i>las4mturismo@turismo.com</p>
+                <p> <i class="fas fa-phone"></i>3815051592</p>
+                </div>
+    
+                <div class="info-column">
+                    <h3>Todo Turismo</h3>
+                    <a href="#"> <i class="fa-brands fa-twitter"></i>Twiter</a>
+                    <a href="#"> <i class="fa-brands fa-instagram"></i>Instagram</a>
+                    <a href="#"> <i class="fa fa-globre"></i>Sitio Oficial</a>
+                </div>
+            </div>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3282.7559763521085!2d-58.36733122445098!3d-34.635606459182675!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95a334b6925e5473%3A0x1ca5b2748858b40d!2sEstadio%20Alberto%20J.%20Armando-%20La%20Bombonera!5e0!3m2!1ses-419!2sar!4v1695342679838!5m2!1ses-419!2sar" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </section>
-        <h1>Contacto</h1>
-        <section id="contacto">
-        <form id="contactForm">
-            <div>
-                <label for="nombre">Nombre:</label>
-                <input type="text" id="nombre" name="nombre" required>
-            </div>
-            <div>
-                <label for="email">Correo Electrónico:</label>
-                <input type="email" id="email" name="email" required>
-            </div>
-            <div>
-                <label for="telefono">Teléfono:</label>
-                <input type="tel" id="telefono" name="telefono">
-            </div>
-            <div>
-                <label for="mensaje">Mensaje:</label>
-                <textarea id="mensaje" name="mensaje" rows="4" required></textarea>
-            </div>
-            <div>
-                <button type="submit">Enviar</button>
-            </div>
-        </form>
-    </section>
-
-    <section id="contact" class="black-bg">
-        <div class="info-container">
-            <h2>Contactame</h2>
-            <div class="info-column">
-                <h3>En la nube</h3>
-            <p> <i class="fas fa-location-dot"></i>Servidor 123</p>
-            <p> <i class="fas fa-envelope"></i>las4mturismo@turismo.com</p>
-            <p> <i class="fas fa-phone"></i>3815051592</p>
-            </div>
-
-            <div class="info-column">
-                <h3>Todo Turismo</h3>
-                <a href="#"> <i class="fa-brands fa-twitter"></i>Twiter</a>
-                <a href="#"> <i class="fa-brands fa-instagram"></i>Instagram</a>
-                <a href="#"> <i class="fa fa-globre"></i>Sitio Oficial</a>
-            </div>
-        </div>
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3282.7559763521085!2d-58.36733122445098!3d-34.635606459182675!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95a334b6925e5473%3A0x1ca5b2748858b40d!2sEstadio%20Alberto%20J.%20Armando-%20La%20Bombonera!5e0!3m2!1ses-419!2sar!4v1695342679838!5m2!1ses-419!2sar" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-    </section>
-    
-    
-
-    <script src="index.js">
-
-    </script>
+        <footer>Hecho Por Marcos Brizuela</footer>
     </main>
-    <footer>Hecho Por Marcos Brizuela</footer>
+    
+    <script src="index.js"></script>
 </body>
 </html>
